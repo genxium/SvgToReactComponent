@@ -9,6 +9,7 @@
 	"author": "genxium@hotmail.com",
 	"license": "ISC",
 	"dependencies": {
-		"mkdirp": "*"
+		"mkdirp": "*",
+		"svg-to-jsx": "*"
 	}
 }
