@@ -1,0 +1,9 @@
+# npm
+node_modules
+node_modules/*
+
+# project specific
+*.svg
+svg_files/*
+
+widgets/*
