@@ -1,15 +1,17 @@
 {
-	"name": "svg-widget-gen",
-	"version": "1.0.0",
-	"description": "",
-	"main": "index.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"author": "genxium@hotmail.com",
-	"license": "ISC",
-	"dependencies": {
-		"mkdirp": "*",
-		"svg-to-jsx": "*"
-	}
+  "name": "svg-widget-gen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "genxium@hotmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "mkdirp": "^0.5.1",
+    "svg-to-jsx": "0.0.20",
+    "xmldom": "^0.1.27",
+    "xpath": "0.0.23"
+  }
 }

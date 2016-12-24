@@ -2,27 +2,32 @@ const fs = require('fs');
 const mkdirp = require('mkdirp');
 
 const svgtojsx = require('svg-to-jsx');
-
-function splitAndToCamelCase(s) {
-	return (s||'').toLowerCase().replace(/(\b|-|_)\w/g, function(m) {
-    return m.toUpperCase().replace(/(-|_)/,'');
-  });
-}
+const common = require('./common');
 
 function convertSingle(svgFolderPath, svgFilename, svgFileExt, widgetFolderPath) {
 	const svgFilePath = svgFolderPath + "/" + svgFilename + "." + svgFileExt;
-	console.log(svgFilePath);		
-
 	const svgContents = fs.readFileSync(svgFilePath, 'utf-8');
 
-	const className = splitAndToCamelCase(svgFilename);  
+	const className = common.splitAndToCamelCase(svgFilename);  
+	const cssRelativeFilepathForWidget = "./" + className + ".css";
+
 	const widgetFilePath = widgetFolderPath + "/" + className + ".js"; 
 	svgtojsx(svgContents).then(function(jsx) {
+			
+			// NOTE: There could be conversion lost of tags.
+
 			const theJsContent = [
 				"'use-strict';",
 				"",
 				"const React = require('react');", 
 				"const Component = React.Component;",
+				"const fs = require('fs');",
+				"try {",
+				"	// Needs feasible css-loader.",
+				"	require('" + cssRelativeFilepathForWidget + "');",
+				"} catch(err) {",
+				" // Error handling here.",
+				"}",
 				"",
 				"class " + className + " extends Component {",
 				"	render() {",
@@ -38,8 +43,11 @@ function convertSingle(svgFolderPath, svgFilename, svgFileExt, widgetFolderPath)
 				"export default " + className + ";",
 			].join('\n');
 
-			
 			fs.writeFile(widgetFilePath, theJsContent); 
+
+			// Create the template css file w.r.t. jsx content.
+			const cssFilePath = widgetFolderPath + "/" + className + ".css";
+			common.generateCssTemplate(jsx, className, cssFilePath, true);
 	});
 }
 
