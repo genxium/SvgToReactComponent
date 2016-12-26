@@ -13,7 +13,7 @@ For designer folks using `OSX`, please follow the instructions below to use this
   - In other words, `<proj-root>` means `~/Downloads/SvgToReactComponent` for you if you follow the instructions above strictly.
 
 
-- Open a [terminal](https://en.wikipedia.org/wiki/Terminal_(macOS), then execute the following commands.
+- Open a <a href=https://en.wikipedia.org/wiki/Terminal_(macOS)>terminal</a>, then execute the following commands.
 
 ```
 shell@anywhere> cd ~/Downloads/SvgToReactComponent
@@ -24,10 +24,10 @@ shell@proj-root> npm install
 - Wait until the download is completed.
 
 - Put any of your `.svg` file(s) under `<proj-root>/svg_files`.
-  - Be careful, you should have assigned proper `id`s and `class`es, e.g. using lowercase/uppercase English characters, '-', '_' and numbers ONLY, to each tag within the `.svg` file(s).
+  - Be careful, you should have assigned proper `id`s and `class`es, e.g. using lowercase/uppercase English characters `[A-Za-z]`, punctuations `-`, `_` and numbers ONLY, to each tag within the `.svg` file(s).
 
 
-- Open the [terminal](https://en.wikipedia.org/wiki/Terminal_(macOS) again, execute the following commands.
+- Open the <a href=https://en.wikipedia.org/wiki/Terminal_(macOS)>terminal</a> again, execute the following commands.
 
 ```
 shell@anywhere> cd ~/Downloads/SvgToReactComponent
