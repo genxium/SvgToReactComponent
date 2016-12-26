@@ -25,7 +25,7 @@ function convertSingle(svgFolderPath, svgFilename, svgFileExt, designerPackFolde
 		svgtojsx(svgContents).then(function(jsx) {
 			const theHtmlContent = [
 				"<html>",
-				"	" + jsx,
+				"	" + svgContents,
 				"<link rel=stylesheet href=\"./" + className + ".css\" type=\"text/css\">",
 				"</html>",
 			].join('\n');
