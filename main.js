@@ -21,7 +21,7 @@ function convertSingle(svgFolderPath, svgFilename, svgFileExt, widgetFolderPath)
 				"",
 				"const React = require('react');", 
 				"const Component = React.Component;",
-				"const fs = require('fs');",
+				"",
 				"try {",
 				"	// Needs feasible css-loader.",
 				"	require('" + cssRelativeFilepathForWidget + "');",
