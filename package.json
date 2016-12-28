@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "mkdirp": "^0.5.1",
-    "svg-to-jsx": "0.0.20",
+    "svg-to-jsx": "https://github.com/genxium/svg-to-jsx",
     "xmldom": "^0.1.27",
     "xpath": "0.0.23"
   }
